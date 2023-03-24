@@ -1,0 +1,28 @@
+{
+  "name": "Messaging demo",
+  "description": "test to replicate a bug.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html"
+  },
+  "host_permissions": [
+    "https://*/*"
+  ],
+  "permissions": [
+    "storage",
+    "background",
+    "tabs",
+    "webNavigation",
+    "scripting",
+    "nativeMessaging"
+  ],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "script-src": "self ",
+    "object-src": "self"
+  }
+}
