@@ -7,7 +7,8 @@
     "default_popup": "index.html"
   },
   "host_permissions": [
-    "https://*/*"
+    "https://*/*",
+    "http://localhost/*"
   ],
   "permissions": [
     "storage",
@@ -24,5 +25,16 @@
   "content_security_policy": {
     "script-src": "self ",
     "object-src": "self"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "content-script.js"
+      ]
+    }
+  ]
 }
