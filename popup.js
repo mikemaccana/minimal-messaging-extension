@@ -9,7 +9,7 @@ buttonToServiceWorker.addEventListener("click", async () => {
   log(
     `In popup, button to send message to service worker was clicked, about to run sendMessage`
   );
-  const response = chrome.runtime.sendMessage({
+  const response = await chrome.runtime.sendMessage({
     to: "service-worker",
     text: "hello from popup",
   });
